@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Next.jsが外部画像の読み込みを制限しているため
   images: {
     remotePatterns: [
       {
