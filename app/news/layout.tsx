@@ -5,6 +5,8 @@ type props = {
   children: React.ReactNode;
 };
 
+export const revalidate = 60;
+
 export default function layout({ children }: props) {
   return (
     <>

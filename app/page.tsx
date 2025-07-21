@@ -7,6 +7,8 @@ import NewsList from "./_components/NewsList";
 import ButtonLink from "./_components/ButtonLink";
 // import { News } from "@/app/_libs/microcms";
 
+export const revalidate = 60;
+
 // const data: {
 //   contents: News[];
 // } = {
