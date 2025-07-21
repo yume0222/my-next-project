@@ -82,6 +82,12 @@ export const getNewsDetail = async (
     endpoint: 'news',
     contentId,
     queries,
+    // データ単位でキャッシュを制御
+    customRequestInit: {
+      next: {
+        revalidate: queries?.draftKey === undefined ? 60 : 0,
+      },
+    },
   });
 
   return detailData;
