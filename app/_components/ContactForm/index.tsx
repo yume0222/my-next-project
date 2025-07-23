@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGAEvent } from '@next/third-parties/google';
 import { createContactData } from "@/app/_actions/contact";
 import { useFormState } from "react-dom";
 import styles from "./index.module.css";
@@ -13,6 +14,9 @@ export default function ContactForm() {
   // useFormState()は第一関数にServerActionsを、第二関数にServerActionsから受け取る初期値を指定できる。今回はstatusとmessage
   const [state, formAction] = useFormState(createContactData, initialState);
   console.log(state);
+  const handleSubmit = () => {
+    sendGAEvent({ event: 'contact', value: 'submit' });
+  };
   if (state.status === "success") {
     return (
       <p className={styles.success}>
@@ -24,7 +28,7 @@ export default function ContactForm() {
   }
   return (
     // actionにuseFormStateから受け取るformActionを渡すことでServerActionsへフォームのデータを渡すことができる
-    <form className={styles.form} action={formAction}>
+    <form className={styles.form} action={formAction} onSubmit={handleSubmit}>
       <div className={styles.horizontal}>
         <div className={styles.item}>
           <label className={styles.label} htmlFor="lastname">

@@ -1,13 +1,17 @@
-import Hero from "../_components/Hero";
-import Sheet from "../_components/Sheet";
+import Hero from '@/app/_components/Hero';
+import Sheet from '@/app/_components/Sheet';
 
-type props = {
+export const metadata = {
+  title: 'ニュース',
+};
+
+type Props = {
   children: React.ReactNode;
 };
 
 export const revalidate = 60;
 
-export default function layout({ children }: props) {
+export default function NewsLayout({ children }: Props) {
   return (
     <>
       <Hero title="News" sub="ニュース" />
