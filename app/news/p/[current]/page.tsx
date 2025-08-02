@@ -23,7 +23,7 @@ export default async function Page({ params }: Props) {
     offset: NEWS_LIST_LIMIT * (current - 1),
   });
 
-  // 取得したarticlesの配列に11つもコンテンツがない場合
+  // 取得したarticlesの配列に1つもコンテンツがない場合
   if (news.length === 0) {
     notFound();
   }

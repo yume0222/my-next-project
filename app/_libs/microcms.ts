@@ -26,20 +26,6 @@ export type News = {
   category: Category;
 } & MicroCMSListContent;
 
-// export type Category = {
-//   name: string;
-// };
-
-// export type News = {
-//   id: string;
-//   title: string;
-//   category: {
-//     name: string;
-//   };
-//   publishedAt: string;
-//   createdAt: string;
-// };
-
 // .env.lacalファイルに設定した環境変数を参照
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');

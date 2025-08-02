@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllCategoryList, getAllNewsList } from './app/_libs/microcms';
+import { getAllCategoryList, getAllNewsList } from './_libs/microcms';
 
 
 const buildUrl = (path?: string) => `https://my-next-project-9nnu.vercel.app/${path ?? ''}`;
